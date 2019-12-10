@@ -77,35 +77,35 @@ class Registration extends React.Component {
   }
 
   render() {
-    
-    const {width,classes,onSubmit,steps, nextPage,isBasic,isPremium,previousPage, page, register,error,isDemo,goToDemo, goToBasic, goToPremium  } = this.props;
-    console.log("STATE",this.state)
-    console.log("Page",page)
+    const {
+      width, classes, onSubmit, steps, nextPage, isBasic, isPremium, previousPage, page, register, error, isDemo, goToDemo, goToBasic, goToPremium
+    } = this.props;
+    console.log('STATE', this.state);
+    console.log('Page', page);
     return (
       <Fragment>
         <CssBaseline />
         <main className={classes.layout}>
           <Paper className={classes.paper}>
-            <Fragment> 
-                  <Grid container spacing={24}>
-                    <Grid item xs={12} md={12}>
-                      <Stepper activeStep={page} className={classes.stepper} alternativeLabel={isWidthDown('sm', width)}>
-                        {steps.map(label => (
-                          <Step key={label}>
-                            <StepLabel>
-                              {label}
-                            </StepLabel>
-                          </Step>
-                     
-                        ))}
-                      </Stepper>
-                        {error && (<div>{error}</div>)}
-                        {page === 0 && (<CompanyInfoForm classes = {classes} onSubmit = {nextPage} isDemo = {isDemo} goToDemo = {goToDemo} />)}
-                        {page === 1 && (<SubscriptionForm previousPage = {previousPage} onSubmit={nextPage} isPremium={isPremium} isBasic={isBasic}  goToBasic ={goToBasic} goToPremium ={goToPremium} initialValues={register}/>)}
-                        {page === 2 && (<Confirmation previousPage={previousPage} onSubmit={onSubmit}  initialValues={register}/>)}
-                  
-                    </Grid>
-                  </Grid>
+            <Fragment>
+              <Grid container spacing={24}>
+                <Grid item xs={12} md={12}>
+                  <Stepper activeStep={page} className={classes.stepper} alternativeLabel={isWidthDown('sm', width)}>
+                    {steps.map(label => (
+                      <Step key={label}>
+                        <StepLabel>
+                          {label}
+                        </StepLabel>
+                      </Step>
+                    ))}
+                  </Stepper>
+                  {error && (<div>{error}</div>)}
+                  {page === 0 && (isDemo ? (<CompanyInfoForm classes={classes} isDemo={isDemo} onSubmit={onSubmit} goToDemo={goToDemo} initialValues={register} />) : (<CompanyInfoForm classes={classes} isDemo={isDemo} onSubmit={nextPage} goToDemo={goToDemo} initialValues={register} />))}
+                  {page === 1 && (<SubscriptionForm previousPage={previousPage} onSubmit={nextPage} isPremium={isPremium} isBasic={isBasic} goToBasic={goToBasic} goToPremium={goToPremium} initialValues={register} />)}
+                  {page === 2 && (<Confirmation previousPage={previousPage} onSubmit={onSubmit} initialValues={register} />)}
+
+                </Grid>
+              </Grid>
             </Fragment>
           </Paper>
         </main>
@@ -117,35 +117,34 @@ Registration.propTypes = {
   messageNotif: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   nextPage: PropTypes.func.isRequired,
-  previousPage : PropTypes.func.isRequired
+  previousPage: PropTypes.func.isRequired
 };
 
 const reducer = 'registration';
 const mapStateToProps = state => ({
   force: state, // force state from reducer
-  page: state.getIn([reducer,'page']),
-  register: state.getIn([reducer,'register']),
-  error: state.getIn([reducer,'error']),
+  page: state.getIn([reducer, 'page']),
+  register: state.getIn([reducer, 'register']),
+  error: state.getIn([reducer, 'error']),
   messageNotif: state.getIn([reducer, 'notifMsg']),
-  steps:state.getIn([reducer,'steps']),
-  isDemo:state.getIn([reducer,'isDemo']),
-  isBasic:state.getIn([reducer,'isBasic']),
-  isPremium:state.getIn([reducer,'isPremium'])
+  steps: state.getIn([reducer, 'steps']),
+  isDemo: state.getIn([reducer, 'isDemo']),
+  isBasic: state.getIn([reducer, 'isBasic']),
+  isPremium: state.getIn([reducer, 'isPremium'])
 });
-const constDispatchToProps = (dispatch) => {
-  return {
-    onSubmit: (data) => {dispatch(registrationActions.submitRegistration(data)) },
+const constDispatchToProps = (dispatch) => ({
+  onSubmit: (values) => { dispatch(registrationActions.submitRegistration(values)); },
   //   nextPage: (values) => {dispatch(registrationActions.goToNextPageTest(values))},
-    nextPage:(values) =>{(console.log('VALUES',values))},
-    previousPage: () => {dispatch(registrationActions.goToPreviousPage())},
-    goToDemo: () => {dispatch(registrationActions.goToDemo())},
-    goToBasic: () => {dispatch(registrationActions.goToBasic())},
-    goToPremium: () => {dispatch(registrationActions.goToPremium())},
-  }
-}
+  nextPage: (values) => { dispatch(registrationActions.goToNextPage(values)); },
+  // nextPage:(values) =>{(console.log('VALUES',values))},
+  previousPage: () => { dispatch(registrationActions.goToPreviousPage()); },
+  goToDemo: () => { dispatch(registrationActions.goToDemo()); },
+  goToBasic: () => { dispatch(registrationActions.goToBasic()); },
+  goToPremium: () => { dispatch(registrationActions.goToPremium()); },
+});
 const RegistrationMapped = connect(
   mapStateToProps,
   constDispatchToProps
 )(Registration);
 
-export default  withStyles(styles)(RegistrationMapped);
+export default withStyles(styles)(RegistrationMapped);

@@ -47,39 +47,66 @@ const styles = theme => ({
 });
 
 
-class Confirmation extends React.Component { 
-
+class Confirmation extends React.Component {
   render() {
-     const {classes}=this.props
+    const { classes, initialValues } = this.props;
     return (
       <Fragment>
-      <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom>
       Confirmation
-      </Typography>
-     
+        </Typography>
 
 
-      <div className={classes.finishMessage}>
-       <Typography variant="h4" gutterBottom>
-         <span>
-           <Ionicon icon="ios-checkmark-circle-outline" />
-         </span>
+        <div className={classes.finishMessage}>
+          <Typography variant="h4" gutterBottom>
+            <span>
+              <Ionicon icon="ios-checkmark-circle-outline" />
+            </span>
          Thank you for your registration.
-       </Typography>
-       <Typography variant="subtitle1">
-         Your registration is successful&nbsp;
-         <strong></strong>
-         .&nbsp;A email is sending for your confirmation
-        
-       </Typography>
-       <Button variant="contained" color="primary" href="/app/pages/ecommerce" className={classes.button}>
+          </Typography>
+          <Typography variant="subtitle1">
+         Your registration is successful&nbsp;.&nbsp;A email is sending for your confirmation&nbsp;&nbsp;
+
+
+            <strong>
+Company Name:
+              {initialValues.get('companyName')}
+            </strong>
+            <strong>
+Company Tel:
+              {initialValues.get('telCompany')}
+            </strong>
+            <strong>
+First Name:
+              {initialValues.get('firstName')}
+            </strong>
+            <strong>
+Last Name:
+              {initialValues.get('lastName')}
+            </strong>
+            <strong>
+Pack Name:
+              {initialValues.get('pack')}
+            </strong>
+            <strong>
+Promotion Name:
+              {initialValues.get('promotion')}
+            </strong>
+
+            <strong>
+Email:
+              {initialValues.get('email')}
+            </strong>
+
+          </Typography>
+          <Button variant="contained" color="primary" href="/app/pages/ecommerce" className={classes.button}>
        Verify your address Email
-       </Button>
-     </div>
+          </Button>
+        </div>
       </Fragment>
 
     );
-}
+  }
 }
 Confirmation.propTypes = {
   classes: PropTypes.object.isRequired,

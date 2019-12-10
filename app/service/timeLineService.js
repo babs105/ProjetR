@@ -8,7 +8,7 @@ export const timeLineService = {
 };
 function getAllTimeLine() {
   return userService.loginExistingUser(getCookie(types.LOGIN_COOKIE))
-    .then(data => axios.get('/timeLine/getTimelineActivityByUser/'+data.user.id))
+    .then(data => axios.get('/timeLine/getTimelineActivityByUser/' + data.user.id))
     .then(handleResponse).then(timeLine => timeLine);
 }
 

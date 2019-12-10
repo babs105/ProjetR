@@ -65,7 +65,7 @@ class Timeline extends React.Component {
     const getItem = dataArray => dataArray.map(data => (
       <li key={data.get('id')}>
         <div className={classes.iconBullet}>
-          <Tooltip id={'tooltip-icon-'+ data.get('id')} title={data.get('date')}>
+          <Tooltip id={'tooltip-icon-' + data.get('id')} title={data.get('date')}>
             <Icon className={classes.icon}>
               {'date_range'}
             </Icon>
@@ -73,12 +73,12 @@ class Timeline extends React.Component {
         </div>
         <Card className={classes.cardSocmed}>
           <CardHeader
-            avatar={
-              <Avatar alt="avatar"  className={classes.avatar} >
+            avatar={(
+              <Avatar alt="avatar" className={classes.avatar}>
               T
               </Avatar>
-            }
-        
+            )}
+
             title={data.get('action')}
             subheader={data.get('date')}
           />
@@ -91,10 +91,10 @@ class Timeline extends React.Component {
           )} */}
           <CardContent>
             <Typography variant="h6" component="p">
-            <Link href={`/app/${data.get('type')}/${data.get('elementNumber')}`} className={classes.link}>
-                  {data.get('type')}
-               </Link>
-              
+              <Link href={`/app/${data.get('type')}/${data.get('elementNumber')}`} className={classes.link}>
+                {data.get('type')}
+              </Link>
+
             </Typography>
             {/* <Typography variant="body2" component="p">
             {data.get('elementNumber')}

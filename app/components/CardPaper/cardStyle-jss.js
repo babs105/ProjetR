@@ -59,7 +59,7 @@ const styles = theme => ({
   btnArea: {
     justifyContent: 'center',
     padding: theme.spacing.unit * 3,
-    color:'white'
+    color: 'white'
   },
   playIcon: {
     height: 38,
@@ -212,9 +212,9 @@ const styles = theme => ({
     },
   },
   label: {
-  
+
     color: theme.palette.common.white,
-   
+
   },
   media: {
     height: 0,

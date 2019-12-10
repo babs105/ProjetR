@@ -84,8 +84,8 @@ export PaymentForm from './Forms/PaymentForm';
 export Review from './Forms/Review';
 export SideReview from './Forms/SideReview';
 export CompanyInfoForm from './Forms/CompanyInfoForm';
-export SubscriptionForm from './Forms/SubscriptionForm'
-export Confirmation     from './Forms/Confirmation';
+export SubscriptionForm from './Forms/SubscriptionForm';
+export Confirmation from './Forms/Confirmation';
 // Texteditor Toolbar
 export HeadlinesButton from './TextEditor/HeadlinesButton';
 // UI
@@ -161,10 +161,4 @@ export AddBoard from './TaskBoard/AddBoard';
 // Error
 export ErrorWrap from './Error/ErrorWrap';
 // Theme an Layout Settings
-export TemplateSettings from './TemplateSettings'; 
-
-
-
-
-
-
+export TemplateSettings from './TemplateSettings';

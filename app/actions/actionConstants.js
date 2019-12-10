@@ -182,7 +182,7 @@ export const FETCH_COMMENT_DATA = 'FETCH_COMMENT_DATA';
 export const POST_COMMENT = 'POST_COMMENT';
 
 
-//Registration multi form step
+// Registration multi form step
 export const GO_TO_NEXT_PAGE_SUCCESS = 'GO_TO_NEXT_PAGE_SUCCESS';
 export const GO_TO_NEXT_PAGE_FAILURE = 'GO_TO_NEXT_PAGE_FAILURE';
 export const PREVIOUS_PAGE = 'PREVIOUS_PAGE';

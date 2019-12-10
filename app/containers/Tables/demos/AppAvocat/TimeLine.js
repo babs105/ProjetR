@@ -101,7 +101,7 @@ const mapStateToProps = state => ({
 });
 
 const constDispatchToProps = dispatch => ({
-  getAllTimeLine:() => dispatch(timeLineActions.getAllTimeLine()),
+  getAllTimeLine: () => dispatch(timeLineActions.getAllTimeLine()),
   fetchData: bindActionCreators(fetchAction, dispatch),
   submitPost: bindActionCreators(postAction, dispatch),
   submitComment: bindActionCreators(postCommentAction, dispatch),

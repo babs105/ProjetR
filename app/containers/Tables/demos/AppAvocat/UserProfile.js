@@ -51,16 +51,17 @@ class UserProfile extends React.Component {
   handleChange = (event, value) => {
     this.setState({ value });
   };
+
   handleSubmit = (val) => {
     console.log(val);
- }
+  }
 
   render() {
     const title = brand.name + ' - Profile';
     const description = brand.desc;
-    const {  classes,userProfil } = this.props;
+    const { classes, userProfil } = this.props;
     const { value } = this.state;
-    console.log("USERDETAILS",userDetails);
+    console.log('USERDETAILS', userDetails);
     return (
       <div>
         <Helmet>
@@ -85,7 +86,8 @@ class UserProfile extends React.Component {
               variant="fullWidth"
               indicatorColor="primary"
               textColor="primary"
-              centered>
+              centered
+            >
               <Tab icon={<AccountCircle />} />
               <Tab icon={<SupervisorAccount />} />
               <Tab icon={<Favorite />} />
@@ -108,7 +110,7 @@ class UserProfile extends React.Component {
             </Tabs>
           </Hidden>
         </AppBar>
-        {value === 0 && <TabContainer><About user={userProfil}/></TabContainer>}
+        {value === 0 && <TabContainer><About user={userProfil} /></TabContainer>}
         {value === 1 && <TabContainer><Connection /></TabContainer>}
         {value === 2 && <TabContainer><Favorites /></TabContainer>}
         {value === 3 && <TabContainer><Albums /></TabContainer>}
@@ -119,13 +121,14 @@ class UserProfile extends React.Component {
 
 UserProfile.propTypes = {
   classes: PropTypes.object.isRequired,
-  userDetails:PropTypes.object.isRequired
+  userDetails: PropTypes.object.isRequired
 };
 
 const reducer = 'userProfil';
 const mapStateToProps = state => ({
   force: state, // force state from reducer
-  userProfil: state.getIn([reducer,'userProfil'])}
+  userProfil: state.getIn([reducer, 'userProfil'])
+}
 );
 
 const constDispatchToProps = dispatch => ({

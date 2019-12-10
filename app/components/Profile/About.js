@@ -31,17 +31,16 @@ import Type from 'dan-styles/Typography.scss';
 import Timeline from '../SocialMedia/Timeline';
 import PapperBlock from '../PapperBlock/PapperBlock';
 import styles from './profile-jss';
-import AboutForm from './AboutForm'
+import AboutForm from './AboutForm';
 
 
 class About extends React.Component {
-
   handleSubmit = (values) => {
-
     console.log(values);
- }
+  }
+
   render() {
-    const { classes,user, onSubmit } = this.props;
+    const { classes, user, onSubmit } = this.props;
     return (
       <Grid
         container
@@ -53,13 +52,13 @@ class About extends React.Component {
         <Grid item md={7} xs={12}>
           <div>
             {/* <Timeline dataTimeline={data} /> */}
-          <AboutForm onSubmit={onSubmit} user={user}/>
+            <AboutForm onSubmit={onSubmit} user={user} />
 
           </div>
         </Grid>
         {/* <Grid item md={5} xs={12}> */}
-          {/* Profile Progress */}
-          {/* <div className={classes.progressRoot}>
+        {/* Profile Progress */}
+        {/* <div className={classes.progressRoot}>
             <Paper className={classes.styledPaper} elevation={4}>
               <Typography className={classes.title} variant="h5" component="h3">
                 <span className={Type.light}>Profile Strength: </span>
@@ -80,9 +79,9 @@ class About extends React.Component {
               <LinearProgress variant="determinate" className={classes.progress} value={60} />
             </Paper>
           </div> */}
-          {/* ----------------------------------------------------------------------*/}
-          {/* About Me */}
-          {/* <PapperBlock title="About Me" icon="ios-contact-outline" whiteBg noMargin desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed urna in justo euismod condimentum.">
+        {/* ----------------------------------------------------------------------*/}
+        {/* About Me */}
+        {/* <PapperBlock title="About Me" icon="ios-contact-outline" whiteBg noMargin desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed urna in justo euismod condimentum.">
             <Divider className={classes.divider} />
             <List dense className={classes.profileList}>
               <ListItem>
@@ -106,9 +105,9 @@ class About extends React.Component {
             </List>
           </PapperBlock>
           <Divider className={classes.divider} /> */}
-          {/* ----------------------------------------------------------------------*/}
-          {/* My Albums */}
-          {/* <PapperBlock title="My Albums (6)" icon="ios-images-outline" whiteBg desc="">
+        {/* ----------------------------------------------------------------------*/}
+        {/* My Albums */}
+        {/* <PapperBlock title="My Albums (6)" icon="ios-images-outline" whiteBg desc="">
             <div className={classes.albumRoot}>
               <GridList cellHeight={180} className={classes.gridList}>
                 {
@@ -146,9 +145,9 @@ class About extends React.Component {
               </Button>
             </Grid>
           </PapperBlock> */}
-          {/* ----------------------------------------------------------------------*/}
-          {/* My Connection Me */}
-          {/* <PapperBlock title="My Connection" icon="ios-contacts-outline" whiteBg desc="">
+        {/* ----------------------------------------------------------------------*/}
+        {/* My Connection Me */}
+        {/* <PapperBlock title="My Connection" icon="ios-contacts-outline" whiteBg desc="">
             <List dense className={classes.profileList}>
               <ListItem button>
                 <Avatar className={classNames(classes.avatar, classes.orangeAvatar)}>H</Avatar>
@@ -174,9 +173,9 @@ class About extends React.Component {
               </Button>
             </Grid>
           </PapperBlock> */}
-          {/* ----------------------------------------------------------------------*/}
-          {/* My Interests */}
-          {/* <PapperBlock title="My Interests" icon="ios-aperture-outline" whiteBg desc="">
+        {/* ----------------------------------------------------------------------*/}
+        {/* My Interests */}
+        {/* <PapperBlock title="My Interests" icon="ios-aperture-outline" whiteBg desc="">
             <Grid container className={classes.colList}>
               <Grid item md={6}>
                 <ListItem>
@@ -212,7 +211,7 @@ class About extends React.Component {
               </Grid>
             </Grid>
           </PapperBlock> */}
-          {/* ----------------------------------------------------------------------*/}
+        {/* ----------------------------------------------------------------------*/}
         {/* </Grid> */}
       </Grid>
     );
